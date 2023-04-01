@@ -1,7 +1,4 @@
 
-# web project - laptopstore v.1.0
-# Тут классы для создания таблиц пользователей
-
 from .app import db, bcrypt, login_manager
 from datetime import datetime, date
 from flask_login import UserMixin
