@@ -1,5 +1,4 @@
 #web project - laptopstore v.1.0
-#app подключение
 
 from flask import Flask,flash
 from flask_sqlalchemy import SQLAlchemy
