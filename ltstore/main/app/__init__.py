@@ -21,7 +21,7 @@ login_manager.login_view = "login_page"
 login_manager.login_message = "Необходима авторизация"
 login_manager.login_message_category =  "info"
 
-#простая админка
+
 app.config['BASIC_AUTH_USERNAME'] = 'admin'
 app.config['BASIC_AUTH_PASSWORD'] = '12345'
 
