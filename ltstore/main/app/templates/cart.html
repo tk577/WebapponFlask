@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header-cart">
+    <h1>Корзина</h1>
+</div>
+<div class="panel-cart">
+    {% if products %}
+    <div class="panel-body">
+            <table>
+                <tr>
+                    <th>Производитель</th>
+                    <th>Название товара</th>
+                    <th>Цена</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>{% for product in products %}<ul>{{ product.item_brand }}</ul>{% endfor %}</td>
+                    <td>{% for product in products %}<ul>{{ product.item_name }}</ul>{% endfor %}</td>
+                    <td>{% for product in products %}<ul>{{ product.price }}</ul>{% endfor %}</td>
+                    <td>{% for product in products %}<ul><a href="{{url_for('remove_from_cart')}}">Убрать</a></ul>
+                        {% endfor %}</td>
+                </tr>
+                <tr>
+                    <th>Итоговая ценна</th>
+                    <th></th>
+                    <th>{{total_price}}</th>
+                </tr>
+            </table>
+
+
+
+    </div>
+    <div class="order-items">
+        <a href="{{url_for('order_checkout')}}">Оформить заказ</a>
+    </div>
+    {% else %}
+    <div class="empty-cart">
+        <h3>Товары отсутствуют</h3>
+        <p>Добавьте товары в корзину!</p>
+    </div>
+    <div class="see-to-catalogue">
+        <a href="{{ url_for('catalogue_page')}}">Посмотреть товары</a>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

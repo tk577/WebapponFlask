@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+{% if list %}
+<div class="table-users" style="overflow-x:auto;">
+    <table>
+        <tr>
+            <th>№ заказа</th>
+            <th>Получатель</th>
+            <th>Номер</th>
+            <th>email</th>
+            <th>Способ оплаты</th>
+            <th>Сумма оплаты</th>
+            <th>Удаление</th>
+        </tr>
+        <tr>
+            <td>{% for order in list %} <ul>{{ order.id }}</ul> {% endfor %}</td>
+            <td>{% for order in list %} <ul>{{ order.client_name }}</ul> {% endfor %}</td>
+            <td>{% for order in list %} <ul>{{ order.phone }}</ul> {% endfor %}</td>
+            <td>{% for order in list %} <ul>{{ order.email }}</ul> {% endfor %}</td>
+            <td>{% for order in list %} <ul>{{ order.payment }}</ul> {% endfor %}</td>
+            <td>{% for order in list %} <ul>{{ order.total_price }}</ul> {% endfor %}</td>
+            <td>{% for order in list %}<ul><a href="{{url_for('del_order', id=order.id)}}">Удалить</a></ul>{% endfor %}</td>
+        </tr>
+    </table>
+</div>
+{% else %}
+<div class="empty-orders">
+    <h3>Отсутствуют оформленные заказы</h3>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+.main-container {
+	display: grid;
+	margin-left: 5%;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(1);
+}
+.main-container h1 {
+	text-align: center;
+}
+.left-bar {
+	grid-column: 1/2;
+}
+
+.container {
+	grid-column: 2/10;
+}
+
+.right-bar {
+	grid-column: 10/11;
+}
+
+@media (max-width: 1000px) {
+	.main-container {
+		display: grid;
+		grid-template-columns: none;
+	}
+}

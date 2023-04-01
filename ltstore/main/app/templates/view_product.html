@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="panel-body">
+    {% if product %}
+    <div class="view-item-info">
+    <div class="item-name">
+        <h2>{{ product.item_name }}</h2>
+    </div>
+    <div class="image-item">
+        <img src="data:image/jpg;base64,{{ product.rendered_data }}" alt="laptop" style="width: 98%; height: 80%; border: 6px solid gray;
+	border-radius: 10px;">
+    </div>
+    <div class="specifications">
+        <div class="price">
+    <h3>
+        {{ product.price }} руб
+    </h3>
+    </div>
+        <div class="btn-view-add-item-to-card">
+            <form action="{{ url_for('add_to_cart', id=product.id) }}" method="POST">
+                {{form.hidden_tag()}}
+                {{form.submit(class="view-add-item-to-card")}}
+            </form>
+    </div>
+        <div class="category">
+        <a href="{{ url_for('catalogue_page')}}">{{ product.category }}</a>
+        </div>
+        <p><strong>Экран:</strong> {{ product.display }}</p>
+        <p><strong>Процессор:</strong> {{ product.cpu }}</p>
+        <p><strong>Оперативная память (ROM):</strong> {{ product.rom }}</p>
+        <p><strong>Встроенная память (RAM):</strong> {{ product.ram }}</p>
+    </div>
+    </div>
+    <div class="description-item">
+    {{ product.description }}
+    <hr />
+    </div>
+    {% endif %}
+</div>
+<div class="add-post-btn">
+    <a href="{{ url_for('add_post', id=product.id) }}">Оставить отзыв</a>
+
+</div>
+<div class="comment-list">
+    {% if comment %}
+        {% for post in comment %}
+            <div class="comment-form">
+                <h4>{{ post.profiles_id }}</h4>
+                <hr/>
+                <p>{{ post.comment }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3>Будьте первыми! Оставьте мнение о товаре!</h3>
+    {% endif %}
+</div>
+
+{% endblock %}

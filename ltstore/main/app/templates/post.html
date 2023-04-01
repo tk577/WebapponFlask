@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<form method="POST" class="form-control">
+    {{ post.hidden_tag() }}
+    <p>
+        {{ post.comment(class='form-control', placeholder='Введите комментарий')}}</p>
+
+    {{ post.submit(class="btn btn-lg btn-block btn-primary")}}
+</form>
+{% endblock %}

@@ -1,0 +1,96 @@
+
+@import url(https://fonts.googleapis.com/css?family=Bitter&display=swap);
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background-color: rgba(190, 190, 190, 0.3);
+}
+
+body {
+	font-family: Bitter, sans-serif;
+	height: 100%;
+	
+}
+
+.flash {padding: 10px;}
+.flash.success {
+	font-size: 25px;
+	border: 1px solid #21DB56;
+	background: #AEFFC5;
+}
+.flash.danger {
+	font-size: 25px;
+	border: 1px solid #FF4343;
+	background: #FF9C9C;
+}
+
+.flash.info {
+	font-size: 25px;
+	border: 1px solid rgba(0, 58, 255, 0.8);
+	background: rgba(0, 45, 230, 0.62);
+}
+
+.up-btn {
+	margin-left: 90%;
+}
+
+.up-btn>a {
+	padding: 10px 10px;
+	border: 0.5px solid rgb(190, 190, 190);
+	border-radius: 10px;
+	font-size: 20px;
+	color: rgb(190, 190, 190);
+}
+
+.up-btn>a:hover {
+	border: 0.5px solid black;
+	color: black;
+	background-color: white;
+}
+
+/* footer */
+
+.footer {
+	display: grid;
+	margin-top: 3em;
+	grid-template-columns: repeat(3, 1fr);
+	height: 100px;
+    border-top: 2px solid silver;
+}
+
+.footer-header {
+	grid-column: 1/2;
+	margin-top: 1.5em;
+	margin-left: 5em;
+	padding: 0;
+}
+
+.footer-header>a {
+	font-size: 30px;
+	font-style: italic;
+	text-decoration: none;
+	color: black;
+}
+
+.footer-header>a:hover {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.footer-container {
+	grid-column: 2/3;
+}
+
+.copyright-app {
+	margin-top: 4em;
+	text-align: center;
+}
+
+@media (max-width: 1100px) {
+	.up-btn {
+	margin-top: 2em;
+	margin-left: 5%;}
+}

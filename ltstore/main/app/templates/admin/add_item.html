@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{super()}}
+<p>{{title}}</p>
+
+<div class="form-add_items">
+<form method="POST" class="form-add_item" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+
+    {{ form.item_brand.label() }}
+    <p>{{ form.item_brand(class='form-control')}}</p>
+
+    {{ form.item_name.label() }}
+    <p>{{ form.item_name(class='form-control')}}</p>
+
+    {{ form.category.label() }}
+    <p>{{ form.category(class='form-control')}}</p>
+
+    {{ form.barcode.label() }}
+    <p>{{ form.barcode(class='form-control')}}</p>
+
+    {{ form.price.label() }}
+    <p>{{ form.price(class='form-control')}}</p>
+
+    {{ form.display.label() }}
+    <p>{{ form.display(class='form-control')}}</p>
+
+    {{ form.cpu.label() }}
+    <p>{{ form.cpu(class='form-control')}}</p>
+
+    {{ form.rom.label() }}
+    <p>{{ form.rom(class='form-control')}}</p>
+
+    {{ form.ram.label() }}
+    <p>{{ form.ram(class='form-control')}}</p>
+
+    {{ form.description.label() }}
+    <p>{{ form.description(class='form-control')}}</p>
+
+    {{ form.quantity.label() }}
+    <p>{{ form.quantity(class='form-control')}}</p>
+
+    {{ form.image.label() }}
+    <p>{{ form.image(class='form-control')}}</p>
+
+    {{ form.submit(class="add-item-btn")}}
+</form>
+</div>
+{% endblock %}

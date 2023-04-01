@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block left_bar %}
+{% endblock -%}
+
+{% block content %}
+<div class="head-catalogue"><h1>Каталог</h1></div>
+<div class="catalogue-container">
+  <div class="catalogue-card">
+    <a href="{{ url_for('store')}}">
+      <img src="static/images/ls3.jpeg" alt="laptops_category">
+      <h3>Ноутбуки</h3>
+    </a>
+  </div>
+  <div class="catalogue-card">
+    <a href="{{ url_for('store_bags')}}">
+      <img src="static/images/bags.jpeg" alt="bags_category">
+      <h3>Сумки</h3>
+    </a>
+  </div>
+  <div class="catalogue-card">
+    <a href="{{ url_for('store_keyboards')}}">
+      <img src="static/images/keyboards.jpeg" alt="keyboards_category">
+      <h3>Клавиатуры и мыши</h3>
+    </a>
+  </div>
+  <div class="catalogue-card">
+    <a href="{{ url_for('store_charger')}}">
+      <img src="static/images/charge.jpeg" alt="charge_category">
+      <h3>Зарядные устройства</h3>
+    </a>
+  </div>
+  <div class="catalogue-card">
+    <a href="{{ url_for('store_po')}}">
+      <img src="static/images/po.jpeg" alt="po_category">
+      <h3>ПО</h3>
+    </a>
+  </div>
+  <div class="catalogue-card">
+    <a href="{{ url_for('store_spares')}}">
+      <img src="static/images/parts.jpeg" alt="parts_category">
+      <h3>Комплектующие для ноутбуков</h3>
+    </a>
+  </div>
+</div>
+
+{% endblock %}

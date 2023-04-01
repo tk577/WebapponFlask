@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{super()}}
+<h1>{{title}}</h1>
+<div class="form-register">
+<form method="POST">
+
+     {{ form.hidden_tag() }}
+
+
+    {{ form.client_name.label(class='form-label') }}
+    <p>{{ form.client_name(class='form-control', value=current_user.name)}}</p>
+
+    {{ form.email.label(class='form-label') }}
+    <p>{{ form.email(class='form-control', value=current_user.email)}}</p>
+
+    <p>{{ form.phone.label(class='form-label') }}
+    {{ form.phone(class='form-control', value=current_user.phone)}}</p>
+
+    {{ form.delivery.label(class='form-label') }}
+    <p>{{ form.delivery(class='form-control')}}</p>
+
+    {{ form.payment.label(class='form-label') }}
+    <p>{{ form.payment(class='form-control')}}</p>
+
+    <div class="total-price">
+        <h4>Итоговая цена</h4>
+        {{total_price}} руб
+    </div>
+    <hr>
+
+      {{ form.submit_pay(class="register-btn")}}
+
+    <div class="submit-back">
+        <a href="{{url_for('cart_page', id=current_user.id)}}">Отмена</a>
+    </div>
+
+</form>
+</div>
+{% endblock %}

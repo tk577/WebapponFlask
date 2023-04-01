@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{super()}}
+<h1>{{title}}</h1>
+<div class="form-edit-profile">
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+
+    {{ form.name.label() }}
+    <p>{{ form.name(class='form-control', value=current_user.name)}}</p>
+
+    {{ form.lastname.label() }}
+    <p>{{ form.lastname(class='form-control', value=current_user.lastname)}}</p>
+
+
+    {{ form.email.label() }}
+    <p>{{ form.email(class='form-control', value=current_user.email)}}</p>
+
+
+
+    {{ form.submit(class="btn-edit-profile", value='Изменить')}}
+</form>
+</div>
+{% endblock %}

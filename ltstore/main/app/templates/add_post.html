@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{super()}}
+<div class="add-post-form">
+    <div class="add-post-header">
+        <h1>{{title}}</h1>
+    </div>
+
+    <div class="add-post-text">
+        <form method="POST" class="form-post" enctype="multipart/form-data">
+             {{ post.hidden_tag() }}
+            <p>{{ post.comment(class='form-control', placeholder='Отзыв')}}</p>
+            {{ post.submit(class="btn-send-comment")}}
+        </form>
+    </div>
+</div>
+{% endblock %}

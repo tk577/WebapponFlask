@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{super()}}
+<h1>{{title}}</h1>
+<div class="form-register">
+<form method="POST">
+
+     {{ form.hidden_tag() }}
+
+    <hr>
+    {{ form.name.label(class='form-label') }}
+    <p>{{ form.name(class='form-control', placeholder='Введите имя')}}</p>
+
+    {{ form.lastname.label(class='form-label') }}
+    <p>{{ form.lastname(class='form-control', placeholder='Введите фамилию')}}</p>
+
+    {{ form.email.label(class='form-label') }}
+    <p>{{ form.email(class='form-control', placeholder='Введите email')}}</p>
+
+    <p>{{ form.phone.label(class='form-label') }}
+    {{ form.phone(class='form-control', placeholder='XXXXXXXXXX')}}</p>
+
+    {{ form.password1.label(class='form-label') }}
+    <p>{{ form.password1(class='form-control', placeholder='придумайте сложный пароль')}}</p>
+
+    {{ form.psw2.label(class='form-label') }}
+    <p>{{ form.psw2(class='form-control', placeholder='повторите пароль')}}</p>
+
+    {{ form.date.label(class='form-label') }}
+    <p>{{ form.date(class='form-control')}}</p>
+
+    {{ form.city.label(class='form-label') }}
+    <p>{{ form.city(class='form-control', placeholder='Город')}}</p>
+
+    <div class="agreement">
+        {{ form.agreement.label }}
+        {{ form.agreement()}}
+        <p><a href="">Прочитать условия</a></p>
+
+    </div>
+    {{ form.submit(class="register-btn")}}
+    </hr>
+</form>
+</div>
+{% endblock %}

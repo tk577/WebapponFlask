@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+<!--Бар слева-->
+{% block left_bar %}
+{% endblock -%}
+{% block content %}
+{{super()}}
+<!--the home page form-->
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <img src="static/images/MacBook-Pro_14-16.jpg">
+      <div class="text-1"><a href="{{ url_for('index_menu1') }}">Прикоснитесь к самым мощным Macbook Pro в истории</a></div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="static/images/msisummite15.jpeg">
+    <div class="text-2"><a href="{{ url_for('index_menu2') }}"> MSI Summit E16</a></div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="static/images/mate2.jpg">
+    <div class="text-3">
+        <a href="{{ url_for('index_menu3') }}">
+            <p>Matebook D15</p>
+            Легкий как перышко
+        </a>
+    </div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<!-- Subcontainers -->
+<div class="card-index">
+    <div class="card-1">
+        <a href="{{ url_for('card1')}}">
+            <img src="static/images/apple_lt.jpeg" alt="1">
+            <p>Продукция Apple</p>
+        </a>
+    </div>
+    <div class="card-2">
+        <a href="{{ url_for('card2')}}">
+            <p>Недорогие ноутбуки</p>
+            <img src="static/images/art3.jpeg" alt="2">
+        </a>
+    </div>
+    <div class="card-3">
+        <a href="{{ url_for('store_bags')}}">
+            <img src="static/images/bags2.jpeg" alt="1">
+            <p>Большой выбор сумок!</p>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
+<!--Бар справа-->
+{% block right_bar %}
+{% endblock -%}

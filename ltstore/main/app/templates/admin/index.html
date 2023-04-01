@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{super()}}
+<div class="admin-panel">
+    <a href="{{ url_for('list_items') }}">Список товаров</a>
+    <a href="{{ url_for('list_users') }}">Количество пользователей</a>
+    <a href="{{ url_for('list_orders') }}">Оформленные заказы</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='css/grid.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='css/carousel.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='css/forms.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='css/card-index.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='css/card-store.css') }}" rel="stylesheet">
+    {% block title -%}
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>LTStore</title>
+    {% endif %}
+    {% endblock %}
+</head>
+<body>
+<!--the navigation bar-->
+<span id="up"></span>
+<div class="navbar">
+    <div class="nav-header">
+        <a href="{{ url_for('index')}}">ltstore</a>
+    </div>
+    <div class="drop">
+        <button class="nav-btn">&#8803</button>
+        <div class="nav-list">
+            <a href="{{ url_for('store')}}">Ноутбуки</a>
+            <a href="{{ url_for('catalogue_page')}}">Каталог</a>
+            <a href="{{ url_for('index')}}">Помощь</a>
+            <a href="{{ url_for('index')}}">О нас</a>
+            <a href="{{ url_for('admin')}}">Админ-панель</a>
+        </div>
+    </div>
+    {% if current_user.is_authenticated %}
+            <div class="dropdown">
+                <button class="dropbtn" title="{{current_user.name}}">&#9881;
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('profile_page') }}">Профиль</a>
+
+                    <a href="{{ url_for('logout_page') }}">Выйти</a>
+                </div>
+
+            </div>
+            <div class="cart-btn">
+                    <a href="{{ url_for('cart_page', id=current_user.id) }}">&#128722;</a>
+                </div>
+            {% else %}
+            <div class="dropdown">
+                <button class="dropbtn">&#9881;
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('login_page') }}">Войти</a>
+                    <a href="{{ url_for('register_page') }}">Регистрация</a>
+                </div>
+            </div>
+            {% endif %}
+</div>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+          {% for category, message in messages %}
+            <div class="flash {{category}}">{{ message }}</div>
+          {% endfor %}
+      {% endif %}
+  {% endwith %}
+<!--The page form-->
+<div class="main-container">
+    <!--left-bar-->
+    <div class="left-bar">
+        {% block left_bar %}
+        {% endblock -%}
+    </div>
+    <!--container-->
+    <div class="container">
+        {% block content %}
+        {% endblock -%}
+    </div>
+    <!--right-bar-->
+    <div class="right-bar">
+        {% block right_bar %}
+        {% endblock -%}
+    </div>
+</div>
+<div class="up-btn">
+    <a href="#up">Вверх</a>
+</div>
+<!--Footer-->
+<div class="footer">
+    <div class="footer-header">
+        <a href="{{ url_for('index')}}">ltstore</a>
+    </div>
+    <div class="footer-container">
+        <div class="copyright-app">
+            <p>©2023 ltstore: app demo. Flask</p>
+        </div>
+    </div>
+</div>
+<script src="static/js/scripts.js"></script>
+</body>
+</html>

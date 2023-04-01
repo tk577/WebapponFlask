@@ -1,0 +1,302 @@
+
+/*Register-form*/
+
+.form-add_items,
+.form-edit-profile,
+.form-register,
+.form-signin {
+	width: 100%;
+	padding: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	background-color: white;
+}
+
+h1 {
+	color: black;
+	margin-top: 5%;
+	padding: 15px;
+}
+
+.form-control {
+	width: 90%;
+	padding: 20px;
+	margin: 1em 2em 1em 2em;
+	display: inline-block;
+	border: none;
+	font-size: 25px;
+	background: #f1f1f1;
+}
+
+.form-label {
+	margin-left: 2em;
+}
+
+hr {
+	border: 1px solid #f1f1f1;
+	margin-top: 2em;
+    margin-bottom: 1em;
+}
+.add-item-btn,
+.register-btn {
+    background-color: rgba(0, 150, 0, 0.8);
+    font-size: 30px;
+    color: white;
+    padding: 16px 20px;
+    margin-top: 5%;
+    margin-left: 10%;
+    border: 1px solid rgba(0, 150, 0, 0.8);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 80%;
+    opacity: 0.9;
+}
+
+.register-sign>a:hover,
+.register-btn:hover,
+.add-item-btn:hover,
+.admin-panel a:hover,
+.add-item a:hover, 
+.sign-btn:hover,
+.btn-edit-profile:hover,
+.btn-profile a:hover,
+.submit-back a:hover {
+	color: black;
+	border: 1px solid black;
+	background-color: rgba(255, 255, 255, 0.53);
+}
+
+
+#logout {
+	background-color: rgba(195, 0, 0, 0.7);
+}
+
+#logout:hover {
+	background-color: rgba(198, 0, 0, 1);
+}
+
+.form-edit-profile,
+.form-signin {
+	margin-top: 15%;
+	margin-bottom: 10%;
+}
+
+.form-signin>h3 {
+	margin-bottom: 5%;
+	font-size: 50px;
+}
+
+.register-sign>h4 {
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+
+.sign-btn,
+.register-sign>a{
+	background-color: rgba(0, 193, 6, 0.8);
+	color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.register-sign>a{
+	font-size: 25px;
+	padding: 10px 15px;
+	background-color: rgba(0, 50, 160, 0.6);
+}
+.sign-btn {
+	font-size: 30px;
+	margin-top: 5%;
+	padding: 15px 20px;
+}
+
+/* Profile */
+
+.profile-table caption {
+	font-size: 50px;
+	margin-bottom: 50px;
+	
+}
+
+table {
+	margin-top: 3%;
+	margin-bottom: 10%;
+	width: 100%;
+	border: none;
+	border-collapse: collapse; 
+}
+
+th {
+	font-weight: bold;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+}
+
+td {
+	font-size: 16px;
+	text-align: center;
+}
+
+td>ul {
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	overflow: hidden;
+}
+
+tr:nth-child(even) {
+	margin: 10px;
+    background-color: ghostwhite;
+}
+
+tr>td>ul>a {
+	border: none;
+	color: rgba(0, 150, 0, 0.68);
+}
+
+tr>td>ul>a:hover {
+	color: rgba(255, 0, 0, 0.68);
+}
+
+.btn-profile {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 10%;
+}
+
+.btn-edit-profile,
+.btn-profile a {
+	background-color: rgba(0, 193, 6, 0.8);
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* cart-form */
+
+.panel-cart {
+	margin-bottom: 40%;
+}
+
+.empty-cart,
+.see-to-catalogue {
+	margin: 3em 3em;
+}
+
+.empty-cart>h3 {
+	font-size: 30px;
+}
+
+.empty-cart>p {
+	margin-top: 1em;
+	font-size: 25px;
+}
+
+.see-to-catalogue {
+	margin-top: 4em;
+}
+
+.order-items {
+	margin-left: 40%;
+}
+
+.see-to-catalogue>a,
+.order-items>a {
+	padding: 15px 30px;
+	border: none;
+	border-radius: 10px;
+	font-size: 20px;
+	color: white;
+	background-color: rgba(0, 150, 50, 0.8);
+}
+
+.see-to-catalogue>a:hover,
+.order-items>a:hover {
+	border: 1px double black;
+	color: black;
+	background-color: rgba(250, 250, 250, 0.8);
+}
+
+/* order-form */
+/* see register-form */
+
+.total-price {
+	margin-top: 2em;
+	display: flex;
+	justify-content: space-around;
+	font-size: 40px;
+}
+
+.submit-back {
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+.submit-back>a {
+	padding: 16px 180px;
+	border: 1px solid rgba(200, 0, 0, 0.7);
+	border-radius: 10px;
+	cursor: pointer;
+	color: white;
+	background-color: rgba(200, 0, 0, 0.7);
+}
+
+/* admin-form */
+
+.admin-panel {
+	display: grid;
+	margin: 10%;
+}
+
+.admin-panel a,
+.add-item a {
+	margin-top: 2%;
+	margin-bottom: 5%;
+	border: none;
+	padding: 15px;
+	text-align: center;
+	font-size: 25px;
+	color: white;
+	border-radius: 10px;
+	background-color: rgba(0, 150, 6, 0.8);
+}
+
+.add-item a {
+	display: inline-block;
+}
+
+.form-label {
+	font-size: 30px;
+}
+
+.table-users {
+	margin-top: 3em;
+}
+
+.empty-orders {
+	margin-top: 10%;
+	margin-bottom: 30%;
+}
+
+.empty-orders>h3 {
+	font-size: 25px;
+	text-align: center;
+}
+
+@media (max-width: 900px) {
+	.btn-profile {
+	display: grid;
+	margin-top: 10%; }
+	.btn-profile>a {
+		text-align: center;
+		margin-top: 2em;
+	}
+	.order-items {
+	margin-left: 0%;}
+	}

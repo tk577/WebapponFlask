@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+<div class="add-item"><a href="{{ url_for('add_item') }}">Добавить товар</a>
+</div>
+{% if list %}
+<div class="table_items" style="overflow-x:auto;">
+    <table>
+        <tr>
+            <th>Фирма</th>
+            <th>Название</th>
+            <th>Штрихкод</th>
+            <th>Цена</th>
+            <th>Дата добавления</th>
+            <th>Количество</th>
+            <th>Категория</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>{% for item in list %}<ul>{{ item.item_brand }}</ul>{% endfor %}</td>
+            <td>{% for item in list %}<ul>{{item.item_name}}</ul>{% endfor %}</td>
+            <td>{% for item in list %}<ul>{{ item.barcode }}</ul>{% endfor %}</td>
+            <td>{% for item in list %}<ul>{{ item.price }}</ul>{% endfor %}</td>
+            <td>{% for item in list %}<ul>{{ item.date }}</ul>{% endfor %}</td>
+            <td>{% for item in list %}<ul>{{ item.quantity }}</ul>{% endfor %}</td>
+            <td>{% for item in list %}<ul>{{ item.category }}</ul>{% endfor %}</td>
+            <td>{% for item in list %}<ul><a href="{{url_for('del_item', id=item.id)}}">Удалить</a></ul>{% endfor %}</td>
+        </tr>
+    </table>
+</div>
+{% else %}
+<h2>Товары отсутствуют</h2>
+{% endif %}
+{% endblock %}

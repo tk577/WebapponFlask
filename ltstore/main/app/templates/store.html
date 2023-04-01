@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+<div class="mainItems">
+    {% if data %}
+    {% block left_bar %}
+    {% endblock -%}
+    {% block content %}
+    <div class="store-container">
+
+        {% for item in data %}
+
+        <div class="item-card">
+            <a href="{{ url_for('product', id=item.id) }}" class="btn btn-primary btn-sm">
+                <img src="data:image/jpg;base64,{{ item.rendered_data }}" alt="laptop"
+                     style="width:280px; height: 230px;">
+            </a>
+            <div class="info">
+                <h3>{{ item.item_name }}</h3>
+                <p><b>Экран</b>: {{ item.display }}</p>
+                <p><b>ROM:</b> {{ item.rom }}</p>
+                <p><b>RAM:</b> {{ item.ram }}</p>
+                <div class="price"><h3>{{ item.price }} руб</h3>
+                </div>
+                <h4>
+                    <a href="{{ url_for('product', id=item.id) }}" class="btn btn-primary btn-sm">
+                        Полное описание</a>
+                </h4>
+
+                <div class="btn-add-item-to-card">
+                    <form action="{{ url_for('add_to_cart', id=item.id) }}" method="POST">
+                        {{form.hidden_tag()}}
+                        {{form.submit(class='add-item-to-card')}}
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+
+    </div>
+    <div class="pagination-list">
+        <div class="page-prev">
+            {% if prev_url %}
+            <a href="{{ prev_url }}">Назад</a>
+            {% endif %}
+        </div>
+        <div class="page-next">
+            {% if next_url %}
+            <a href="{{ next_url }}">Далее</a>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+{% else %}
+<h3>Товаров нет, но вы держитесь там</h3>
+
+
+{% endif %}

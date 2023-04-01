@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{super()}}
+<div class="form-signin">
+<h3>{{title}}</h3>
+<form method="POST">
+     {{ form.hidden_tag() }}<!-- для защиты от csrf атак, создавая скрытые поля с токеном-->
+
+    {{ form.email.label(class='form-label') }}
+    <p>{{ form.email(class='form-control', placeholder='Введите email')}}</p>
+
+    {{ form.password1.label(class='form-label') }}
+    <p>{{ form.password1(class='form-control', placeholder='Введите пароль')}}</p>
+    <p>{{ form.remember.label(class='form-label') }} {{ form.remember() }}
+    <div class="register-sign">
+        <h4>Вы еще не зарегистрированы?</h4>
+        <a href="{{ url_for('register_page') }}">Регистрация</a>
+    </div>
+
+    {{ form.submit(class="sign-btn")}}
+</form>
+</div>
+{% endblock %}

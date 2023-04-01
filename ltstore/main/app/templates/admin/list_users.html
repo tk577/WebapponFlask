@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+{% if list %}
+<div class="table-users" style="overflow-x:auto;">
+    <table>
+        <tr>
+            <th>ФИО</th>
+            <th>Номер</th>
+            <th>email</th>
+            <th>Дата рождения</th>
+            <th>Город</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>{% for user in list %} <ul>{{user.lastname}} {{user.name}} {{user.surname}}</ul> {% endfor %}</td>
+            <td>{% for user in list %} <ul>{{ user.phone }}</ul> {% endfor %}</td>
+            <td>{% for user in list %} <ul>{{ user.email }}</ul> {% endfor %}</td>
+            <td>{% for user in list %} <ul>{{ user.date }}</ul> {% endfor %}</td>
+            <td>{% for user in list %} <ul>{{ user.city }}</ul> {% endfor %}</td>
+            <td>{% for user in list %}<ul><a href="{{url_for('del_user', id=user.id)}}">Удалить</a></ul>{% endfor %}</td>
+        </tr>
+    </table>
+</div>
+{% else %}
+<h3>Отсутствуют зарегистрированные пользователи</h3>
+{% endif %}
+{% endblock %}
