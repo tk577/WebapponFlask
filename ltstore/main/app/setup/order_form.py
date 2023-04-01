@@ -1,4 +1,3 @@
-# Форма для добавления в корзину и ее обработка
 
 from wtforms import StringField, IntegerField, SelectField, SubmitField
 from flask_wtf import FlaskForm
