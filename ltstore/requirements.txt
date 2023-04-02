@@ -1,8 +1,8 @@
 Flask
 sqlalchemy (2.0.0)
-pysqlite-2.8.3
+pysqlite (2.8.3)
 pymysql (1.0.2)
-mysql-connector-2.2.9
+mysql-connector (2.2.9)
 flask_migrate (4.4.0)
 Werkzeug (0.12.2)
 Jinja2 (2.10)
